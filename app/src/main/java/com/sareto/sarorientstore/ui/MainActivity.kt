@@ -1,12 +1,12 @@
-package com.sareto.sarorientstore.Auth
+package com.sareto.sarorientstore.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.sareto.sarorientstore.R
 
-class AuthActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
+        setContentView(R.layout.activity_main)
     }
 }

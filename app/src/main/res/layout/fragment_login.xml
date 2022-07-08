@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Auth.LoginFragment">
+    tools:context=".ui.Auth.LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -15,16 +15,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.90" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="331dp"
         android:layout_height="171dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="52dp"
         android:src="@drawable/undraw_authentication_re_svpt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/loginText"
         android:layout_width="0dp"
@@ -96,7 +98,7 @@
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:text="@string/login"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
@@ -108,8 +110,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="New to Sarorient?"
+        android:layout_marginTop="10dp"
+        android:text="Don't have an account?"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -117,7 +119,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:text="Register"
         android:textColor="@color/orange"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
