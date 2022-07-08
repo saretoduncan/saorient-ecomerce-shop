@@ -1,4 +1,4 @@
-package com.sareto.sarorientstore.data
+package com.sareto.sarorientstore.data.network
 
 import com.google.firebase.auth.FirebaseAuth
 import io.reactivex.Completable
