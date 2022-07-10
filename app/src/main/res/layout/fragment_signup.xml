@@ -139,6 +139,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/edit_confirm_password" />
+    <!--already have an account section -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -160,4 +161,5 @@
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/signup_button" />
+    <!--end of already have an account-->
 </androidx.constraintlayout.widget.ConstraintLayout>
