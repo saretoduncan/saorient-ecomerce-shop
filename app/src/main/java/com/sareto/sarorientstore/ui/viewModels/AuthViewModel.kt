@@ -1,4 +1,4 @@
-package com.sareto.sarorientstore.ui.auth
+package com.sareto.sarorientstore.ui.viewModels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -17,7 +17,7 @@ class AuthViewModel: ViewModel() {
     private val _userSignInStatus = MutableLiveData<Resource<AuthResult>>()
     val userSignInStatus: LiveData<Resource<AuthResult>> = _userSignInStatus
     private val userRepo = UserRepository()
-    fun RegisterUser(name:String, email:String, password:String){
+    fun registerUser(name:String, email:String, password:String){
         _userRegistrationStatus.postValue(Resource.Loading())
         viewModelScope.launch (Dispatchers.Main) {
            try {
