@@ -1,10 +1,10 @@
 package com.sareto.sarorientstore.data.repositories
 
-import com.sareto.sarorientstore.data.network.FirebaseSource
+import com.google.firebase.auth.FirebaseAuth
 
-class UserRepository(private val firebase:FirebaseSource) {
-    fun login(email:String, password:String)=firebase.login(email, password)
-    fun signup(email: String, password: String)= firebase.register(email,password)
-    fun currentUser()= firebase.currentUser()
-    fun logout()= firebase.logout()
+
+class UserRepository {
+   private val firebaseAuth=FirebaseAuth.getInstance();
+//    private val databaseReference = Firebase
+
 }
