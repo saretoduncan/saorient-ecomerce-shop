@@ -2,7 +2,6 @@ package com.sareto.sarorientstore.ui.auth
 
 import androidx.lifecycle.ViewModel
 import com.sareto.sarorientstore.data.repositories.UserRepository
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
