@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.sareto.sarorientstore.ui.Auth.LoginFragment"
+        android:name="com.sareto.sarorientstore.ui.auth.LoginFragment"
         android:label="fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signupFragment"
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.sareto.sarorientstore.ui.Auth.SignupFragment"
+        android:name="com.sareto.sarorientstore.ui.auth.SignupFragment"
         android:label="fragment_signup"
         >
         <action

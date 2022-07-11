@@ -1,4 +1,4 @@
-package com.sareto.sarorientstore.ui.Auth
+package com.sareto.sarorientstore.ui.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

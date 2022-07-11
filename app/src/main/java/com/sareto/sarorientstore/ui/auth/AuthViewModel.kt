@@ -1,4 +1,4 @@
-package com.sareto.sarorientstore.ui.Auth
+package com.sareto.sarorientstore.ui.auth
 
 import androidx.lifecycle.ViewModel
 import com.sareto.sarorientstore.data.repositories.UserRepository

@@ -1,4 +1,4 @@
-package com.sareto.sarorientstore.ui.Auth
+package com.sareto.sarorientstore.ui.auth
 
 interface AuthListener {
     fun onStarted()
