@@ -1,13 +1,17 @@
 package com.sareto.sarorientstore.ui.auth
 
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.sareto.sarorientstore.R
+import com.sareto.sarorientstore.data.utility.Resource
 import com.sareto.sarorientstore.databinding.FragmentSignupBinding
 import com.sareto.sarorientstore.ui.base.BaseFragment
 import com.sareto.sarorientstore.ui.viewModels.AuthViewModel
@@ -47,6 +51,20 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>()  {
             binding.edConfirmPassword.error="password doesn't match"
             return
         }
+        authViewModel.registerUser(fullNames, email, password)// signup
+        authViewModel.userRegistrationStatus.observe(viewLifecycleOwner, Observer {
+            when(it){
+                is Resource.Loading->{
+                    Log.d("login......","loading")
+                }
+                is Resource.Success ->{
+                    Toast.makeText(activity,"success", Toast.LENGTH_LONG).show()
+                }
+                is Resource.Error -> {
+                    Toast.makeText(activity, it.message, Toast.LENGTH_LONG).show()
+                }
+            }
+        })
 
     }
 
