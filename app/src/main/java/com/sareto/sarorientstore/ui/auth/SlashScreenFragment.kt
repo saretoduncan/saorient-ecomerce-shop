@@ -20,18 +20,24 @@ import com.sareto.sarorientstore.ui.base.BaseFragment
 
 class SlashScreenFragment : BaseFragment<FragmentSlashScreenBinding>() {
     private lateinit var auth: FirebaseAuth
-    private  var currentUser:FirebaseUser? = null
+
     override fun onStart() {
         super.onStart()
-        auth = Firebase.auth
-        this.currentUser = auth.currentUser
+
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Handler(Looper.getMainLooper()).postDelayed({
-            if(this.currentUser!=null) Navigation.findNavController(view).navigate(R.id.action_splashScreen_to_loginScreen)
-            else Toast.makeText(activity,"${currentUser?.email} is already logged in", Toast.LENGTH_LONG).show()
-        }, 5000)
+        auth = Firebase.auth
+        val currentUser = auth.currentUser
+        if(currentUser ==null) {
+            Handler(Looper.getMainLooper()).postDelayed({
+                Navigation.findNavController(view).navigate(R.id.action_splashScreen_to_loginScreen)
+            }, 5000)
+        }else  Toast.makeText(
+            activity,
+            "${currentUser.email} is already logged in",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
     override fun getFragmentBinding(
