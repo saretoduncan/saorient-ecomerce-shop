@@ -3,7 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/authnav"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/splashScreen">
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.sareto.sarorientstore.ui.auth.SlashScreenFragment"
+        android:label="splash_screen_fragment"
+        >
+        <action android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/loginFragment">
+
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.sareto.sarorientstore.ui.auth.LoginFragment"
