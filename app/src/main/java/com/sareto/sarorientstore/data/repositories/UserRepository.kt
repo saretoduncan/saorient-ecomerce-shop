@@ -1,5 +1,6 @@
 package com.sareto.sarorientstore.data.repositories
 
+import android.util.Log
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
@@ -22,10 +23,12 @@ class UserRepository {
             val registrationResults = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
             val userId= registrationResults.user?.uid!!
             val newUser= User(name, email)
-            databaseReference.child(userId).setValue(newUser).await()
+            val rs =databaseReference.child(userId).setValue(newUser).await()
             Resource.Success(registrationResults)
         }catch (e:Exception){
+            Log.d("realdb...",e.message!!)
             Resource.Error(e.message?:"unKnown error")
+
         }
     }
     suspend fun login(email: String, password: String):Resource<AuthResult>{
@@ -36,5 +39,6 @@ class UserRepository {
             Resource.Error(e.message?:"unKnown error")
         }
     }
+
 
 }
