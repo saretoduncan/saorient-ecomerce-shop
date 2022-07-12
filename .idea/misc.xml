@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/online_shopping__monochromatic.xml" value="0.206" />
         <entry key="app/src/main/res/drawable/undraw_online_shopping_re_k1sv.xml" value="0.206" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21195652173913043" />
