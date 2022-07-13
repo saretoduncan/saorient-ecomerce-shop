@@ -17,7 +17,7 @@ interface IProductsService {
     @GET("products/categories")//get categories
     suspend fun getAllCategories():Response<Categories>
     @GET("products/category/{productName}")//get products by category
-    suspend fun getProductsByCategory(@Path("productName" )productName:String)
+    suspend fun getProductsByCategory(@Path("productName" )productName:String):Response<ProductsItem>
 
 
 
