@@ -1,4 +1,4 @@
-package com.sareto.sarorientstore.data.network.apiHelpers
+package com.sareto.sarorientstore.data.network.apiHelpers.interfaces
 
 import com.sareto.sarorientstore.data.models.Categories
 import com.sareto.sarorientstore.data.models.Products
