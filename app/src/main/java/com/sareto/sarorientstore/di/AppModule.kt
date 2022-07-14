@@ -1,6 +1,8 @@
 package com.sareto.sarorientstore.di
 
 import com.sareto.sarorientstore.BuildConfig
+import com.sareto.sarorientstore.data.network.apiHelpers.impl.ProductsHelperImpl
+import com.sareto.sarorientstore.data.network.apiHelpers.interfaces.IProductsServiceHelper
 import com.sareto.sarorientstore.data.network.apiServices.IProductsService
 import com.sareto.sarorientstore.utils.Constants.BASE_URL
 import dagger.Module
@@ -47,5 +49,9 @@ fun  providerBaseUrl()=BASE_URL
     @Provides
     @Singleton
     fun providesProductsServices(retrofit: Retrofit) = retrofit.create(IProductsService::class.java)// products service
+
+    @Provides
+    @Singleton
+    fun provideProductsHelper(productsHelperImpl: ProductsHelperImpl):IProductsServiceHelper= productsHelperImpl//products service helper
 
 }
