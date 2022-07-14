@@ -1,6 +1,7 @@
 package com.sareto.sarorientstore.di
 
 import com.sareto.sarorientstore.BuildConfig
+import com.sareto.sarorientstore.data.network.apiServices.IProductsService
 import com.sareto.sarorientstore.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -43,5 +44,8 @@ fun  providerBaseUrl()=BASE_URL
         .baseUrl(BASE_URL)
         .client(okHttpClient)
         .build()
+    @Provides
+    @Singleton
+    fun providesProductsServices(retrofit: Retrofit) = retrofit.create(IProductsService::class.java)// products service
 
 }
