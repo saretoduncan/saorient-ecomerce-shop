@@ -5,8 +5,8 @@ import javax.inject.Inject
 
 class ProductsRepository
 @Inject constructor(private val productsHelperImpl: ProductsHelperImpl){
-    suspend fun getAllProducts()=productsHelperImpl.getAllProducts()
-    suspend fun getProductById(id:String)= productsHelperImpl.getProductById(id)
-    suspend fun getAllCategories()= productsHelperImpl.getAllCategories()
-    suspend fun getProductsByCategory(categoryName:String)= productsHelperImpl.getProductsByCategory(categoryName)
+    suspend fun getAllProducts()=productsHelperImpl.getAllProducts()//get all products
+    suspend fun getProductById(id:String)= productsHelperImpl.getProductById(id)// get product by id
+    suspend fun getAllCategories()= productsHelperImpl.getAllCategories()//get all categories
+    suspend fun getProductsByCategory(categoryName:String)= productsHelperImpl.getProductsByCategory(categoryName)//get products by category
 }
