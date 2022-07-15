@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.sareto.sarorientstore.data.models.Categories
 import com.sareto.sarorientstore.data.models.Products
 import com.sareto.sarorientstore.data.models.ProductsItem
 import com.sareto.sarorientstore.data.repositories.ProductsRepository
@@ -22,9 +23,13 @@ class ProductsViewModels
     private val _productByIdResponse = MutableLiveData<Resource<ProductsItem>>()//get product by id response
     val productByIdResponse:LiveData<Resource<ProductsItem>>
     get()=_productByIdResponse//get product by livedata
+    private val _categoryResponse =MutableLiveData<Resource<Categories>>()// get all categories
+    val categoriesResponse:LiveData<Resource<Categories>>
+    get() = _categoryResponse//get all categories
     init {
         getAllProducts()//get all products
     }
+    //getAllProducts
     fun getAllProducts()= viewModelScope.launch {
         _productsResponse.postValue(Resource.Loading(null))
        productsRepository.getAllProducts().let {
@@ -33,6 +38,7 @@ class ProductsViewModels
            }else _productsResponse.postValue(Resource.Error(it.errorBody().toString(), null))
        }
     }
+    //get products by id
     fun getProductById(id:String)= viewModelScope.launch {
         _productByIdResponse.postValue(Resource.Loading(null))
         productsRepository.getProductById(id).let {
@@ -40,4 +46,13 @@ class ProductsViewModels
             else _productByIdResponse.postValue(Resource.Error(it.errorBody().toString(), null))
         }
     }
+    //get all categories
+    fun getCategories() = viewModelScope.launch {
+        _categoryResponse.postValue(Resource.Loading(null))
+        productsRepository.getAllCategories().let {
+            if(it.isSuccessful)_categoryResponse.postValue(Resource.Success(it.body()!!))
+            else _categoryResponse.postValue(Resource.Error(it.errorBody().toString(), null))
+        }
+    }
+
 }
