@@ -1,5 +1,6 @@
 package com.sareto.sarorientstore.ui.viewModels
 
+import android.content.res.loader.ResourcesLoader
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -26,6 +27,9 @@ class ProductsViewModels
     private val _categoryResponse =MutableLiveData<Resource<Categories>>()// get all categories
     val categoriesResponse:LiveData<Resource<Categories>>
     get() = _categoryResponse//get all categories
+    private val _productsByCategory = MutableLiveData<Resource<Products>>()
+    val productsByCategory:LiveData<Resource<Products>>
+    get()= _productsByCategory
     init {
         getAllProducts()//get all products
     }
@@ -52,6 +56,14 @@ class ProductsViewModels
         productsRepository.getAllCategories().let {
             if(it.isSuccessful)_categoryResponse.postValue(Resource.Success(it.body()!!))
             else _categoryResponse.postValue(Resource.Error(it.errorBody().toString(), null))
+        }
+    }
+    //get products by category
+    fun getProductsByCategory(categoryName:String)=viewModelScope.launch {
+        _productsResponse.postValue(Resource.Loading(null))
+        productsRepository.getProductsByCategory(categoryName).let {
+            if(it.isSuccessful) _productsByCategory.postValue(Resource.Success(it.body()!!))
+            else _productsResponse.postValue(Resource.Error(it.errorBody().toString(), null))
         }
     }
 
