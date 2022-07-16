@@ -23,7 +23,7 @@ class UserRepository {
             val registrationResults = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
             val userId= registrationResults.user?.uid!!
             val newUser= User(name, email)
-            val rs =databaseReference.child(userId).setValue(newUser).await()
+            val rs =databaseReference.child(userId).setValue(newUser).await()//.await avoid callback functions
             Resource.Success(registrationResults)
         }catch (e:Exception){
             Log.d("realdb...",e.message!!)
