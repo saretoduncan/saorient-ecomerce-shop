@@ -32,6 +32,8 @@ class ProductsViewModels
     get()= _productsByCategory
     init {
         getAllProducts()//get all products
+        getCategories()// get all categories fun
+
     }
     //getAllProducts
     fun getAllProducts()= viewModelScope.launch {
