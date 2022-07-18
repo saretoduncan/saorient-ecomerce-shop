@@ -1,5 +1,6 @@
 package com.sareto.sarorientstore.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -16,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import com.sareto.sarorientstore.R
 import com.sareto.sarorientstore.databinding.FragmentSlashScreenBinding
 import com.sareto.sarorientstore.ui.base.BaseFragment
+import com.sareto.sarorientstore.ui.products.ProductsMainActivity
 
 
 class SlashScreenFragment : BaseFragment<FragmentSlashScreenBinding>() {
@@ -33,11 +35,10 @@ class SlashScreenFragment : BaseFragment<FragmentSlashScreenBinding>() {
             Handler(Looper.getMainLooper()).postDelayed({
                 Navigation.findNavController(view).navigate(R.id.action_splashScreen_to_loginScreen)
             }, 5000)
-        }else  Toast.makeText(
-            activity,
-            "${currentUser.email} is already logged in",
-            Toast.LENGTH_LONG
-        ).show()
+        }else {
+            val intent = Intent(requireActivity(), ProductsMainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun getFragmentBinding(
