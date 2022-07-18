@@ -1,5 +1,6 @@
 package com.sareto.sarorientstore.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -14,6 +15,7 @@ import com.sareto.sarorientstore.R
 import com.sareto.sarorientstore.data.utility.Resource
 import com.sareto.sarorientstore.databinding.FragmentSignupBinding
 import com.sareto.sarorientstore.ui.base.BaseFragment
+import com.sareto.sarorientstore.ui.products.ProductsMainActivity
 import com.sareto.sarorientstore.ui.viewModels.AuthViewModel
 
 
@@ -58,7 +60,8 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>()  {
                     Log.d("login......","loading")
                 }
                 is Resource.Success ->{
-                    Toast.makeText(activity,"success", Toast.LENGTH_LONG).show()
+                    val intent = Intent(requireActivity(), ProductsMainActivity::class.java)
+                    startActivity(intent)
                 }
                 is Resource.Error -> {
                     Toast.makeText(activity, it.message, Toast.LENGTH_LONG).show()
