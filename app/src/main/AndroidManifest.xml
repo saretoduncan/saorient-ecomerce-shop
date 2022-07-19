@@ -17,7 +17,7 @@
         android:theme="@style/Theme.SarorientStore"
         tools:targetApi="31">
         <activity
-            android:name=".ProductsMainActivity"
+            android:name=".ui.products.ProductsMainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.auth.AuthActivity"
@@ -30,7 +30,7 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
