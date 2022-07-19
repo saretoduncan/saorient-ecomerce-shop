@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/product_home_nav">
+    android:id="@+id/product_home_nav"
+    app:startDestination="@id/productHome">
+    <fragment
+        android:id="@+id/productHome"
+        android:name="com.sareto.sarorientstore.ui.products.ProductHomeFragment"
+        android:label="Product_Home"
+        >
+<!--        <action android:id="@+id/action_splashScreen_to_loginScreen"-->
+<!--            app:destination="@id/loginFragment">-->
+
+<!--        </action>-->
+    </fragment>
 
 </navigation>
