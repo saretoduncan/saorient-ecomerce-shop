@@ -7,10 +7,12 @@
         <entry key="app/src/main/res/drawable/undraw_online_shopping_re_k1sv.xml" value="0.206" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21195652173913043" />
+        <entry key="app/src/main/res/layout/activity_products_main.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_product_home.xml" value="0.15625" />
+        <entry key="app/src/main/res/layout/fragment_product_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_signup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_slash_screen.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/toolbar_layout.xml" value="0.15520833333333334" />
       </map>
     </option>
   </component>
